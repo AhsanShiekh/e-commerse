@@ -42,6 +42,9 @@ const Config = {
         console.log(`error : ${err}`);
       }
     }
+    else {
+      alert("A user with this email already exists")
+    }
 
     return userRef;
   }
