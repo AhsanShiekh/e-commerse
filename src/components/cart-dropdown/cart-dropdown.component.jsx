@@ -3,6 +3,7 @@ import  FormButton from "../form-button/form-button.component";
 import './cart-dropdown.styles.scss';
 import CartItem from '../cart-item/cart-item.component';
 import { connect } from "react-redux";
+import { SelectCartItems } from "../../redux/cart/cart.selectors";
 
 const CartDropdown = ({cartItems}) => (
     <div className="cart-dropdown">
@@ -11,7 +12,7 @@ const CartDropdown = ({cartItems}) => (
         {
             cartItems.map(cartItem => {
                 return (
-                    <CartItem key={cartItem} item={cartItem}/>
+                    <CartItem key={cartItem.id} item={cartItem}/>
             )})
         }
 
@@ -22,7 +23,7 @@ const CartDropdown = ({cartItems}) => (
 )
 
 const mapStateToProps = state => ({
-    cartItems: state.cart.cartItems
+    cartItems: SelectCartItems(state)
 })
 
 export default connect(mapStateToProps)(CartDropdown);
