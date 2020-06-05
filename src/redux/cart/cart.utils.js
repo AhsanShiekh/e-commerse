@@ -14,3 +14,20 @@ export const AddItemToCart = (cartItems, cartItemToAdd) => {
 
     return [...cartItems, {...cartItemToAdd, quantity: 1}]
 }
+
+export const DecreaseQantity = (cartItems, cartItemToRemove) => {
+    const existing = cartItems.find(
+        cartItem => cartItem.id === cartItemToRemove.id    
+    );
+
+    if(existing.quantity !== 1) {
+        return cartItems.map(cartItem => 
+            cartItem.id === cartItemToRemove.id ?
+            {...cartItem, quantity: cartItem.quantity -1}
+            : cartItem
+        )
+    }
+    else{
+        return cartItems;
+    }
+}
