@@ -36,6 +36,8 @@ const CheckoutPage = ({cartItems, total}) => (
             <span>TOTAL: ${total}</span>
         </div>
 
+        {
+            cartItems.length ?
         <div className="test-warning">
             *PLEASE USE THE FOLLOWING TEST INFO FOR PAYMENTS*
             <br/>
@@ -44,9 +46,12 @@ const CheckoutPage = ({cartItems, total}) => (
             DATE: 01/21
             <br/>
             CVV: 123
+            <br/>
+            <StripeButton price={total}/>
         </div>
-
-        <StripeButton price={total}/>
+        :
+        null
+        }
     </div>
 )
 

@@ -4,3 +4,14 @@
     justify-content: space-between;
     margin: 30px auto;
 }
+
+
+@media only screen and (max-width: 800px) {
+    .SignIn-and-SignOut-page {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .sign-up{
+        margin-top: 20px;
+    }
+}

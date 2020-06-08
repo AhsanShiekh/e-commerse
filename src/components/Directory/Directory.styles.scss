@@ -5,4 +5,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  
+@media only screen and (max-width: 800px) {
+  .directory-menu{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
   

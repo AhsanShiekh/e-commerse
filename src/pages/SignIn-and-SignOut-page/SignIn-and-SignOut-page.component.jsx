@@ -7,7 +7,7 @@ import './SignIn-and-SignOut-page.styles.scss';
 const SignInAndSignOut = () => (
     <div className="SignIn-and-SignOut-page">
         <SignIn/>
-        <SignUp/>
+        <SignUp className='sign-up'/>
     </div>
 )
 

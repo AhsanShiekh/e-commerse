@@ -16,3 +16,7 @@ export const DecreaseQuantity = (item) => ({
     type: 'DECREASE_QUANTITY',
     payload: item
 })
+
+export const ClearCart = () => ({
+    type: 'CLEAR_CART'
+})

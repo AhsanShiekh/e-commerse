@@ -40,3 +40,19 @@
     font-size: 36px;
   }
 }
+
+@media only screen and (max-width: 800px) {
+ .checkout-page{
+   width: 100%;
+
+   .checkout-header {
+   .header-block {
+     width: 20%;
+
+    &:last-child {
+      width: 20%;
+    }
+  }
+}
+}
+}

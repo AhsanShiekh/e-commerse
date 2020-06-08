@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { SelectCurrentUser } from "./redux/user/user.selectors";
 import CheckoutPage from './pages/checkoutPage/checkout-page.component';
+import { ClearCart } from './redux/cart/cart.action';
 
 class App extends React.Component {
 
@@ -19,7 +20,7 @@ class App extends React.Component {
   componentDidMount() {
 
     
-   const { setCurrentUser } = this.props;
+   const { setCurrentUser, clearCart } = this.props;
 
     this.unSubscribeFromAuth = auth.onAuthStateChanged(async user => {
       if(user) {
@@ -34,6 +35,7 @@ class App extends React.Component {
       }
       else{
         setCurrentUser(user)
+        clearCart()
       }
     })
   }
@@ -69,7 +71,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
+  setCurrentUser: user => dispatch(setCurrentUser(user)),
+  clearCart: () => dispatch(ClearCart())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

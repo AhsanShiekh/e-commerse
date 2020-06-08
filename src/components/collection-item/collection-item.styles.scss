@@ -51,3 +51,28 @@
     }
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .collection-item{
+    width: 42vw;
+
+    .custom-button{
+      opacity: 0.7;
+      display: flex;
+    }
+    
+    .image{
+      opacity: 1.0;
+    }
+
+    &:hover {
+      .image{
+        opacity: 1.0;
+      }
+      .custom-button{
+        opacity: 0.7;
+        display: flex;
+      }
+    }
+  }
+}

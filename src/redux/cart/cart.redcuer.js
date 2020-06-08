@@ -30,6 +30,9 @@ const CartReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 cartItems: DecreaseQantity(state.cartItems, action.payload)
             }
+
+        case 'CLEAR_CART': 
+            return INITIAL_STATE;
         
         default:
             return state;
